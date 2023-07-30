@@ -58,9 +58,11 @@ const Slider = () => {
                     })}
                 </Swiper> */}
                 <Swiper modules={[Navigation, Pagination, Scrollbar, A11y]} navigation scrollbar={{ draggable: true }} slidesPerView={1} pagination={{ clickable: true }}>
-                    {listings.map(({ data }, index) => (
-                        <SwiperSlide key={index}>
+                    {listings.map(({ data, id }, index) => (
+                        <SwiperSlide key={index} onClick={() => navigate(`/category/${data.type}/${id}`)}>
                             <div className='swiperSlideDiv' style={{ background: `url(${data.imgUrls[0]}) center no-repeat`, backgroundSize: 'cover' }}>
+                                <p className="swiperSlideText">{data.name}</p>
+                                <p className="swiperSlidePrice">${data.discountedPricee ?? data.regularPrice}{data.type === 'rent' && '/month'}</p>
                             </div>
                         </SwiperSlide>
                     ))}

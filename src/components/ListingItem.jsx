@@ -78,6 +78,7 @@ const ListingItem = ({ listing, id, onDelete }) => {
                         <p className="categoryListingInfoText">
                             {`${listing.bedrooms} ${listing.bedrooms > 1 ? 'Bedrooms' : 'Bedroom'}`}
                         </p>
+
                         <img src={bathtubIcon} alt="bath" />
                         <p className="categoryListingInfoText">
                             {`${listing.bathrooms} ${listing.bathrooms > 1 ? 'Bathrooms' : 'Bathroom'}`}
