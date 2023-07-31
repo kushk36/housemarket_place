@@ -79,10 +79,11 @@ const Listing = () => {
                 )}
                 <ul className="listingDetailsList">
                     <li>
-                        {listing.bedroom > 1 ? `${listing.bedroom} Bedrooms` : '1 Bedroom'}
+                        {listing.bedrooms > 1 ? `${listing.bedrooms} Bedrooms` : '1 Bedroom'}
+                        {console.log(listing.bedroom)}
                     </li>
                     <li>
-                        {listing.bathroom > 1 ? `${listing.bathroom} Bathrooms` : '1 Bathroom'}
+                        {listing.bathrooms > 1 ? `${listing.bathrooms} Bathrooms` : '1 Bathroom'}
                     </li>
                     <li>{listing.parking && 'Parking Spot'}</li>
                     <li>{listing.furnished && 'Furnished'}</li>

@@ -82,6 +82,10 @@ const Profile = () => {
         }
     }
 
+    const onEdit = (listingId) => {
+        navigate(`/edit-listing/${listingId}`)
+    }
+
     const onChange = (e) => {
         setFormData((prevState) => ({
             ...prevState,
@@ -120,7 +124,7 @@ const Profile = () => {
                     <p className="listingText">Your Listings</p>
                     <ul className="listingList">
                         {listings.map((listing) => (
-                            <ListingItem key={listing.id} listing={listing.data} id={listing.id} onDelete={() => onDelete(listing.id)} />
+                            <ListingItem key={listing.id} listing={listing.data} id={listing.id} onDelete={() => onDelete(listing.id)} onEdit={() => onEdit(listing.id)} />
                         ))}
                     </ul>
                 </>
